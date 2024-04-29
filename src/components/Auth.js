@@ -1,21 +1,23 @@
-import { crearteStore } from "redux";
+import classes from './Auth.module.css';
 
-const counterReducer = (state = { counter: 0 }, action) => {
-  if (action.type === "INCREMENTBY2") {
-    return {
-      counter: state.counter + 2,
-    };
-  }
-
-  if (action.type === "DECREMENTBY2") {
-    return {
-      counter: state.counter - 2,
-    };
-  }
-
-  return state;
+const Auth = () => {
+  return (
+    <main className={classes.auth}>
+      <section>
+        <form>
+          <div className={classes.control}>
+            <label htmlFor='email'>Email</label>
+            <input type='email' id='email' />
+          </div>
+          <div className={classes.control}>
+            <label htmlFor='password'>Password</label>
+            <input type='password' id='password' />
+          </div>
+          <button>Login</button>
+        </form>
+      </section>
+    </main>
+  );
 };
 
-const store = crearteStore(counterReducer);
-
-export default store;
+export default Auth;
